@@ -16,27 +16,25 @@ public class interaccionareascript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        puntostxt.text =  puntosactuales.ToString();
+
     }
     public void puntos(int puntosalimentos)
     {
         puntosactuales += puntosalimentos;
     }
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-        pickupscript pikup;
-        pikup = GetComponent<pickupscript>();
-        if(pikup.escomida == true)
-        {
-            puntos(pikup.puntosalimento);
-            Destroy(other.gameObject);
-            
-        }
-        else
-        {
-            puntos(pikup.puntosalimento);
-        }
-        Debug.Log(other);
+           Debug.Log("OnTriggerEnter llamado con " + other.gameObject.name);
+            pickupscript pikup;
+            pikup = other.GetComponent<pickupscript>();
+           puntos(pikup.puntosalimento);
+            if (pikup.escomida == true)
+            {
+                Destroy(other.gameObject);
 
+            }
+          
+        
     }
 }

@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61de33b06b8f4124f98a214b8af0c8b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puntostxt: {fileID: 0}
+  puntostxt: {fileID: 90321580}
   puntosactuales: 0
 --- !u!54 &1362476248
 Rigidbody:
